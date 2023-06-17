@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  grafana:
+    image: bitnami/grafana:6
+    ports:
+      - '3000:3000'
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "bitnami"
+      GF_RENDERING_SERVER_URL: "http://grafana-image-renderer:8080/render"
+      GF_RENDERING_CALLBACK_URL: "http://grafana:3000/"
